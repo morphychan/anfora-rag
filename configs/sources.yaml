@@ -1,0 +1,4 @@
+sample_project:
+  type: code
+  path: data/codebases/sample_project
+  index_path: indexes/sample_project_faiss
