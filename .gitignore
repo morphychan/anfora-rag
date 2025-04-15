@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore external codebases
+data/codebases/*
+!data/codebases/.keep
+!data/codebases/README.md
