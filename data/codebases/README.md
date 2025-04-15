@@ -9,6 +9,6 @@ These projects are not part of the Anfora source code and are excluded from vers
 ### PySocks
 
 - Repo: https://github.com/Anorov/PySocks
-- License: MIT
+- License: custom license
 - Path: `data/codebases/py/PySocks/`
 - Notes: Used to test Python code loader and AST chunking pipeline.

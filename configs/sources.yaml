@@ -1,4 +1,6 @@
-sample_project:
+pysocks:
   type: code
-  path: data/codebases/sample_project
-  index_path: indexes/sample_project_faiss
+  language: python
+  path: data/codebases/py/PySocks
+  index_backend: faiss
+  index_path: indexes/faiss/pysocks
