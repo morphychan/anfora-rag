@@ -60,5 +60,15 @@ class IngestRunner:
             return
 
         pipeline = IngestPipeline(target_config)
-        print(f"Loading documents for target: {target_name}")
-        pipeline.load_documents() 
+        print(f"Starting ingestion for target: {target_name}")
+
+        try:
+            pipeline.load_documents()
+            print(f"Loaded {len(pipeline.documents)} documents.")
+        except Exception as e:
+            print(f"Error during document loading: {e}")
+            return
+
+        # Next steps:
+        # pipeline.generate_embeddings()
+        # pipeline.build_index()
