@@ -1,5 +1,7 @@
 import typer
 
+from src.ingest.runner import IngestRunner
+
 app = typer.Typer(help="Ingest code or document into a vector index.")
 
 @app.command("run")
@@ -23,7 +25,6 @@ def list_targets():
     """
     List all available targets defined in the sources.yaml configuration file.
     """
-    # Placeholder
-    # runner = IngestRunner()
-    # runner.list_targets()
-    typer.echo("[DRY RUN] Would list all configured targets.")
+    runner = IngestRunner()
+    runner.list_targets()
+    # typer.echo("[DRY RUN] Would list all configured targets.")
