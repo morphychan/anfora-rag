@@ -2,6 +2,7 @@ import yaml
 import os
 import sys
 from typing import Dict, Any, Optional
+from src.ingest.pipeline import IngestPipeline
 
 class IngestRunner:
     """
@@ -53,5 +54,11 @@ class IngestRunner:
         Args:
             target_name (str): Target key in the sources config.
         """
-        # Placeholder logic for now
-        print(f"[DRY RUN] Would ingest target: {target_name}")
+        target_config = self.sources.get(target_name)
+        if not target_config:
+            print(f"Target {target_name} not found.")
+            return
+
+        pipeline = IngestPipeline(target_config)
+        print(f"Loading documents for target: {target_name}")
+        pipeline.load_documents() 

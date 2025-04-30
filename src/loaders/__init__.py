@@ -1,7 +1,7 @@
 from typing import List
 
 from src.types.document import Document
-from .python_loader import load_python_project
+from .python_loader import PythonCodeLoader
 
 def load_code_project(path: str, language: str) -> List[Document]:
     """
@@ -15,5 +15,6 @@ def load_code_project(path: str, language: str) -> List[Document]:
         List[Document]: List of parsed documents.
     """
     if language == "python":
-        return load_python_project(path)
+        loader = PythonCodeLoader(path)
+        return loader.load()
     raise ValueError(f"Unsupported language: {language}")

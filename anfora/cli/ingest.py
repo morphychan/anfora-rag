@@ -15,10 +15,8 @@ def run(target: str = typer.Option(..., "--target", help="Target name as defined
     Args:
         target (str): Target key as defined in the sources.yaml config file.
     """
-    # Placeholder
-    # runner = IngestRunner()
-    # runner.run(target)
-    typer.echo(f"[DRY RUN] Would ingest target: {target}")
+    runner = IngestRunner()
+    runner.run(target)
 
 @app.command("list")
 def list_targets():
@@ -27,4 +25,4 @@ def list_targets():
     """
     runner = IngestRunner()
     runner.list_targets()
-    # typer.echo("[DRY RUN] Would list all configured targets.")
+
