@@ -31,6 +31,12 @@ class PythonCodeLoader(BaseCodeLoader):
 
         return self.documents
 
+    def _extract_documents(self, path: str, source_code: str) -> List[Document]:
+        """
+        Parse source code into AST, extract functions/classes, return as Documents.
+        """
+        raise NotImplementedError
+
 def load_python_project(path: str) -> List[Document]:
     """
     Adapter function for loading a Python project.
