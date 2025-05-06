@@ -3,7 +3,7 @@ from tree_sitter import Language
 from pathlib import Path
 
 if __name__ == "__main__":
-    output_path = Path("build/languages.so")
+    output_path = Path("build/tree_sitter_parser.so")
     print(f"[Tree-sitter] Building parsers...")
 
     Language.build_library(
